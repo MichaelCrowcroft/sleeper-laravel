@@ -22,14 +22,13 @@ class PlayersResource extends BaseResource
     }
 
     /**
-     * Convenience helper: return enriched trending list with `player` details attached.
+     * Convenience helper: return trending list with player details merged into each item.
      *
      * Example output item:
      * [
      *   'player_id' => '4034',
      *   'count' => 123,
-     *   'delta_weighted' => 456,
-     *   'player' => [ ... attributes from Sushi Player model ... ]
+     *   ... attributes from Sushi Player model
      * ]
      */
     public function trendingArrayWithPlayers(?string $sport = null, ?int $lookbackHours = null, ?int $limit = null): array
@@ -42,8 +41,10 @@ class PlayersResource extends BaseResource
         }
         $players = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($ids);
         foreach ($items as &$i) {
-            if (($i['player_id'] ?? null) && isset($players[$i['player_id']])) {
-                $i['player'] = $players[$i['player_id']];
+            $pid = $i['player_id'] ?? null;
+            if ($pid && isset($players[$pid])) {
+                // Merge player attributes into the item. Preserve existing item keys on collision.
+                $i = $i + $players[$pid];
             }
         }
         unset($i);

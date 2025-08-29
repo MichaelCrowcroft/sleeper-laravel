@@ -135,7 +135,7 @@ $wrs = Player::where('position', 'WR')->limit(10)->get();
 
 Enriched helpers that blend player data wherever `player_id` appears:
 
-- `Sleeper::players()->trendingArrayWithPlayers()` / `trendingWithPlayers()` → attaches `player` to each trending item.
+- `Sleeper::players()->trendingArrayWithPlayers()` / `trendingWithPlayers()` → merges Sushi player attributes into each item.
 - `Sleeper::leagues()->matchupsWithUsers(leagueId, week)` → each team now includes `players_info` and `starters_info` arrays.
 - `Sleeper::drafts()->board(draftId)` → each pick includes a `player` key when resolvable.
 - `Sleeper::leagues()->transactionsWithPlayers(leagueId, round)` → adds `adds_players` and `drops_players` arrays.

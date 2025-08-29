@@ -62,15 +62,24 @@ class Player extends Model
             foreach ($header as $i => $key) {
                 $row[$key] = $data[$i] ?? null;
             }
-            // Normalize eager-used fields
-            if (!empty($row['fantasy_positions'])) {
-                // Store fantasy_positions as an array for convenience
-                $row['fantasy_positions'] = array_values(array_filter(explode('|', (string) $row['fantasy_positions'])));
-            }
             $rows[] = $row;
         }
         fclose($handle);
 
         return $rows;
+    }
+
+    /**
+     * Accessor: expose fantasy_positions as array while storing as pipe-delimited string.
+     */
+    public function getFantasyPositionsAttribute($value): array
+    {
+        if (is_array($value)) {
+            return $value;
+        }
+        if (is_string($value) && $value !== '') {
+            return array_values(array_filter(explode('|', $value)));
+        }
+        return [];
     }
 }
