@@ -71,16 +71,12 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sleeper\\Laravel\\SleeperServiceProvider"
+                "MichaelCrowcroft\\Sleeper\\SleeperServiceProvider"
             ],
             "aliases": {
-                "Sleeper": "Sleeper\\Laravel\\Facades\\Sleeper"
+                "Sleeper": "MichaelCrowcroft\\Sleeper\\Facades\\Sleeper"
             }
         }
-    },
-    "support": {
-        "issues": "https://github.com/michaelcrowcroft/sleeper-laravel/issues",
-        "source": "https://github.com/michaelcrowcroft/sleeper-laravel"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
