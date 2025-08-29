@@ -1,22 +1,29 @@
 {
     "name": "michaelcrowcroft/sleeper-laravel",
-    "description": "Laravel package to give fluent API for Sleeper.",
+    "description": "Fluent Laravel SDK for the Sleeper API (Saloon-based) with Sushi-powered players cache.",
+    "type": "library",
     "keywords": [
-        ":vendor_name",
         "laravel",
-        ":package_slug"
+        "sleeper",
+        "fantasy-football",
+        "api",
+        "sdk",
+        "client",
+        "saloon",
+        "eloquent",
+        "sushi"
     ],
     "homepage": "https://github.com/michaelcrowcroft/sleeper-laravel",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Michael Crowcroft",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.4",
+        "ext-pdo_sqlite": "*",
         "calebporzio/sushi": "^2.5",
         "illuminate/contracts": "^11.0||^12.0",
         "saloonphp/saloon": "^3.0",
@@ -36,13 +43,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Sleeper\\Laravel\\": "src/",
-            "Sleeper\\Laravel\\Database\\Factories\\": "database/factories/"
+            "MichaelCrowcroft\\Sleeper\\": "src/",
+            "MichaelCrowcroft\\Sleeper\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sleeper\\Laravel\\Tests\\": "tests/",
+            "MichaelCrowcroft\\Sleeper\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -70,6 +77,10 @@
                 "Sleeper": "Sleeper\\Laravel\\Facades\\Sleeper"
             }
         }
+    },
+    "support": {
+        "issues": "https://github.com/michaelcrowcroft/sleeper-laravel/issues",
+        "source": "https://github.com/michaelcrowcroft/sleeper-laravel"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
