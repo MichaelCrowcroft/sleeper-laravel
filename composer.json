@@ -43,13 +43,13 @@
     },
     "autoload": {
         "psr-4": {
-            "MichaelCrowcroft\\Sleeper\\": "src/",
-            "MichaelCrowcroft\\Sleeper\\Database\\Factories\\": "database/factories/"
+            "MichaelCrowcroft\\SleeperLaravel\\": "src/",
+            "MichaelCrowcroft\\SleeperLaravel\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MichaelCrowcroft\\Sleeper\\Tests\\": "tests/",
+            "MichaelCrowcroft\\SleeperLaravel\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -71,10 +71,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MichaelCrowcroft\\Sleeper\\SleeperServiceProvider"
+                "MichaelCrowcroft\\SleeperLaravel\\SleeperServiceProvider"
             ],
             "aliases": {
-                "Sleeper": "MichaelCrowcroft\\Sleeper\\Facades\\Sleeper"
+                "Sleeper": "MichaelCrowcroft\\SleeperLaravel\\Facades\\Sleeper"
             }
         }
     },
