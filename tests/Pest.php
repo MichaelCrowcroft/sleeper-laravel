@@ -1,6 +1,5 @@
 <?php
 
-use Sleeper\Laravel\Tests\TestCase;
+use MichaelCrowcroft\SleeperLaravel\Tests\TestCase;
 
 uses(TestCase::class)->in('Feature', 'Unit');
-

@@ -1,8 +1,8 @@
 <?php
 
-namespace Sleeper\Laravel\Support;
+namespace MichaelCrowcroft\SleeperLaravel\Support;
 
-use Sleeper\Laravel\Models\Player;
+use MichaelCrowcroft\SleeperLaravel\Models\Player;
 
 class PlayerLookup
 {
@@ -41,4 +41,3 @@ class PlayerLookup
         return $p ? $p->toArray() : null;
     }
 }
-

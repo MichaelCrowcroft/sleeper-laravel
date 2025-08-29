@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Requests\Players;
+namespace MichaelCrowcroft\SleeperLaravel\Requests\Players;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -16,4 +16,3 @@ class GetAllPlayers extends Request
         return "/players/{$this->sport}";
     }
 }
-

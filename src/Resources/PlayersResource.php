@@ -1,11 +1,11 @@
 <?php
 
-namespace Sleeper\Laravel\Resources;
+namespace MichaelCrowcroft\SleeperLaravel\Resources;
 
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\Players\GetAllPlayers;
-use Sleeper\Laravel\Requests\Players\GetTrendingPlayers;
+use MichaelCrowcroft\SleeperLaravel\Requests\Players\GetAllPlayers;
+use MichaelCrowcroft\SleeperLaravel\Requests\Players\GetTrendingPlayers;
 
 class PlayersResource extends BaseResource
 {
@@ -32,7 +32,7 @@ class PlayersResource extends BaseResource
             $pid = $i['player_id'] ?? null;
             if ($pid) $ids[] = (string) $pid;
         }
-        $players = \Sleeper\Laravel\Support\PlayerLookup::mapByIds($ids);
+        $players = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($ids);
         foreach ($items as &$i) {
             if (($i['player_id'] ?? null) && isset($players[$i['player_id']])) {
                 $i['player'] = $players[$i['player_id']];

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Requests\Leagues;
+namespace MichaelCrowcroft\SleeperLaravel\Requests\Leagues;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -19,4 +19,3 @@ class GetLeagueTransactions extends Request
         return "/league/{$this->leagueId}/transactions/{$this->round}";
     }
 }
-

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Requests\Drafts;
+namespace MichaelCrowcroft\SleeperLaravel\Requests\Drafts;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -16,4 +16,3 @@ class GetLeagueDrafts extends Request
         return "/league/{$this->leagueId}/drafts";
     }
 }
-

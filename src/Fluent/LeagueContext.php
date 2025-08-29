@@ -1,17 +1,17 @@
 <?php
 
-namespace Sleeper\Laravel\Fluent;
+namespace MichaelCrowcroft\SleeperLaravel\Fluent;
 
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\Leagues\GetLeague;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueMatchups;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueRosters;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueTransactions;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueTradedPicks;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueUsers;
-use Sleeper\Laravel\Requests\Leagues\GetLosersBracket;
-use Sleeper\Laravel\Requests\Leagues\GetWinnersBracket;
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeague;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueMatchups;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueRosters;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueTransactions;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueTradedPicks;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueUsers;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLosersBracket;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetWinnersBracket;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 class LeagueContext
 {

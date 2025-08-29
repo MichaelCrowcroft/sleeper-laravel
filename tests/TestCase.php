@@ -1,9 +1,9 @@
 <?php
 
-namespace Sleeper\Laravel\Tests;
+namespace MichaelCrowcroft\SleeperLaravel\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Sleeper\Laravel\SleeperServiceProvider;
+use MichaelCrowcroft\SleeperLaravel\SleeperServiceProvider;
 use Saloon\Http\Faking\MockClient;
 
 class TestCase extends Orchestra
@@ -36,4 +36,3 @@ class TestCase extends Orchestra
         parent::tearDown();
     }
 }
-

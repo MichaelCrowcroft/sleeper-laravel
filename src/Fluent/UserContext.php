@@ -1,12 +1,12 @@
 <?php
 
-namespace Sleeper\Laravel\Fluent;
+namespace MichaelCrowcroft\SleeperLaravel\Fluent;
 
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\Users\GetUser;
-use Sleeper\Laravel\Requests\Users\GetUserDrafts;
-use Sleeper\Laravel\Requests\Users\GetUserLeagues;
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Requests\Users\GetUser;
+use MichaelCrowcroft\SleeperLaravel\Requests\Users\GetUserDrafts;
+use MichaelCrowcroft\SleeperLaravel\Requests\Users\GetUserLeagues;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 class UserContext
 {

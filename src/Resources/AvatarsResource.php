@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Resources;
+namespace MichaelCrowcroft\SleeperLaravel\Resources;
 
 use Saloon\Http\BaseResource;
 
@@ -22,4 +22,3 @@ class AvatarsResource extends BaseResource
         return rtrim((string) config('sleeper.cdn_url'), '/').'/avatars/thumbs/'.ltrim($avatarId, '/');
     }
 }
-

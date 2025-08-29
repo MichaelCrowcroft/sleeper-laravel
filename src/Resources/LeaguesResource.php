@@ -1,17 +1,17 @@
 <?php
 
-namespace Sleeper\Laravel\Resources;
+namespace MichaelCrowcroft\SleeperLaravel\Resources;
 
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\Leagues\GetLeague;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueMatchups;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueRosters;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueTransactions;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueTradedPicks;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueUsers;
-use Sleeper\Laravel\Requests\Leagues\GetLosersBracket;
-use Sleeper\Laravel\Requests\Leagues\GetWinnersBracket;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeague;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueMatchups;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueRosters;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueTransactions;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueTradedPicks;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueUsers;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLosersBracket;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetWinnersBracket;
 
 class LeaguesResource extends BaseResource
 {
@@ -35,7 +35,7 @@ class LeaguesResource extends BaseResource
         foreach ($rosters as $r) {
             foreach ((array) ($r['players'] ?? []) as $pid) { $ids[] = (string) $pid; }
         }
-        $players = \Sleeper\Laravel\Support\PlayerLookup::mapByIds($ids);
+        $players = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($ids);
         foreach ($rosters as &$r) {
             $r['players_info'] = array_values(array_filter(array_map(fn ($pid) => $players[$pid] ?? null, (array) ($r['players'] ?? []))));
         }
@@ -79,7 +79,7 @@ class LeaguesResource extends BaseResource
             foreach (array_keys((array) ($t['adds'] ?? [])) as $pid) { $ids[] = (string) $pid; }
             foreach (array_keys((array) ($t['drops'] ?? [])) as $pid) { $ids[] = (string) $pid; }
         }
-        $players = \Sleeper\Laravel\Support\PlayerLookup::mapByIds($ids);
+        $players = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($ids);
         foreach ($tx as &$t) {
             $t['adds_players'] = array_values(array_filter(array_map(fn ($pid) => $players[$pid] ?? null, array_keys((array) ($t['adds'] ?? [])))));
             $t['drops_players'] = array_values(array_filter(array_map(fn ($pid) => $players[$pid] ?? null, array_keys((array) ($t['drops'] ?? [])))));
@@ -180,7 +180,7 @@ class LeaguesResource extends BaseResource
         }
 
         // Enrich with player details from local Sushi model
-        $playerMap = \Sleeper\Laravel\Support\PlayerLookup::mapByIds($allPlayerIds);
+        $playerMap = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($allPlayerIds);
 
         // Attach enriched data per team
         foreach ($pairs as &$pair) {

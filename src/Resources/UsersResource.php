@@ -1,12 +1,12 @@
 <?php
 
-namespace Sleeper\Laravel\Resources;
+namespace MichaelCrowcroft\SleeperLaravel\Resources;
 
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\Users\GetUser;
-use Sleeper\Laravel\Requests\Users\GetUserDrafts;
-use Sleeper\Laravel\Requests\Users\GetUserLeagues;
+use MichaelCrowcroft\SleeperLaravel\Requests\Users\GetUser;
+use MichaelCrowcroft\SleeperLaravel\Requests\Users\GetUserDrafts;
+use MichaelCrowcroft\SleeperLaravel\Requests\Users\GetUserLeagues;
 
 class UsersResource extends BaseResource
 {
@@ -29,7 +29,7 @@ class UsersResource extends BaseResource
     {
         $sport = $sport ?? (string) config('sleeper.default_sport', 'nfl');
 
-        $state = $this->connector->send(new \Sleeper\Laravel\Requests\State\GetState($sport));
+        $state = $this->connector->send(new \MichaelCrowcroft\SleeperLaravel\Requests\State\GetState($sport));
         $season = (string) ($state->json('league_season') ?? $state->json('season'));
 
         return $this->leagues($userId, $sport, $season);

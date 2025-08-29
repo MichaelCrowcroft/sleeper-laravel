@@ -1,10 +1,10 @@
 <?php
 
-namespace Sleeper\Laravel\Commands;
+namespace MichaelCrowcroft\SleeperLaravel\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 class RefreshPlayersCsv extends Command
 {
@@ -103,4 +103,3 @@ class RefreshPlayersCsv extends Command
         return self::SUCCESS;
     }
 }
-

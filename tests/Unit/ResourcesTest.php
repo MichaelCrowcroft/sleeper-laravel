@@ -2,10 +2,10 @@
 
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
-use Sleeper\Laravel\Requests\State\GetState;
-use Sleeper\Laravel\Requests\Users\GetUserLeagues;
-use Sleeper\Laravel\Requests\Players\GetTrendingPlayers;
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Requests\State\GetState;
+use MichaelCrowcroft\SleeperLaravel\Requests\Users\GetUserLeagues;
+use MichaelCrowcroft\SleeperLaravel\Requests\Players\GetTrendingPlayers;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 it('uses default sport when omitted (players->trending)', function () {
     $mock = MockClient::global([

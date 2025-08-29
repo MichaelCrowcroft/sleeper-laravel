@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Requests\Users;
+namespace MichaelCrowcroft\SleeperLaravel\Requests\Users;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -20,4 +20,3 @@ class GetUserLeagues extends Request
         return "/user/{$this->userId}/leagues/{$this->sport}/{$this->season}";
     }
 }
-

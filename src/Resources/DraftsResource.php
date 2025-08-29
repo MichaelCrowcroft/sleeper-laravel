@@ -1,13 +1,13 @@
 <?php
 
-namespace Sleeper\Laravel\Resources;
+namespace MichaelCrowcroft\SleeperLaravel\Resources;
 
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\Drafts\GetDraft;
-use Sleeper\Laravel\Requests\Drafts\GetDraftPicks;
-use Sleeper\Laravel\Requests\Drafts\GetDraftTradedPicks;
-use Sleeper\Laravel\Requests\Drafts\GetLeagueDrafts;
+use MichaelCrowcroft\SleeperLaravel\Requests\Drafts\GetDraft;
+use MichaelCrowcroft\SleeperLaravel\Requests\Drafts\GetDraftPicks;
+use MichaelCrowcroft\SleeperLaravel\Requests\Drafts\GetDraftTradedPicks;
+use MichaelCrowcroft\SleeperLaravel\Requests\Drafts\GetLeagueDrafts;
 
 class DraftsResource extends BaseResource
 {
@@ -43,7 +43,7 @@ class DraftsResource extends BaseResource
             $pid = $pick['player_id'] ?? null;
             if ($pid) $playerIds[] = (string) $pid;
         }
-        $players = \Sleeper\Laravel\Support\PlayerLookup::mapByIds($playerIds);
+        $players = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($playerIds);
 
         foreach ($picks as $pick) {
             $round = (int) ($pick['round'] ?? 0);

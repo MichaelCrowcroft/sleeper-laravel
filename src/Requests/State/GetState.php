@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Requests\State;
+namespace MichaelCrowcroft\SleeperLaravel\Requests\State;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -18,4 +18,3 @@ class GetState extends Request
         return "/state/{$this->sport}";
     }
 }
-

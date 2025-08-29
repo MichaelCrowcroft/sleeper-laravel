@@ -1,10 +1,10 @@
 <?php
 
-namespace Sleeper\Laravel\Resources;
+namespace MichaelCrowcroft\SleeperLaravel\Resources;
 
 use Saloon\Http\BaseResource;
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\State\GetState;
+use MichaelCrowcroft\SleeperLaravel\Requests\State\GetState;
 
 class StateResource extends BaseResource
 {
@@ -14,4 +14,3 @@ class StateResource extends BaseResource
         return $this->connector->send(new GetState($sport));
     }
 }
-

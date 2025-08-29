@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Requests\Users;
+namespace MichaelCrowcroft\SleeperLaravel\Requests\Users;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
@@ -16,4 +16,3 @@ class GetUser extends Request
         return "/user/{$this->usernameOrId}";
     }
 }
-

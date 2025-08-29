@@ -1,12 +1,12 @@
 <?php
 
-namespace Sleeper\Laravel\Fluent;
+namespace MichaelCrowcroft\SleeperLaravel\Fluent;
 
 use Saloon\Http\Response;
-use Sleeper\Laravel\Requests\Drafts\GetDraft;
-use Sleeper\Laravel\Requests\Drafts\GetDraftPicks;
-use Sleeper\Laravel\Requests\Drafts\GetDraftTradedPicks;
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Requests\Drafts\GetDraft;
+use MichaelCrowcroft\SleeperLaravel\Requests\Drafts\GetDraftPicks;
+use MichaelCrowcroft\SleeperLaravel\Requests\Drafts\GetDraftTradedPicks;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 class DraftContext
 {
@@ -64,7 +64,7 @@ class DraftContext
             $pid = $p['player_id'] ?? null;
             if ($pid) $ids[] = (string) $pid;
         }
-        $players = \Sleeper\Laravel\Support\PlayerLookup::mapByIds($ids);
+        $players = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($ids);
         foreach ($picks as &$p) {
             if (($p['player_id'] ?? null) && isset($players[$p['player_id']])) {
                 $p['player'] = $players[$p['player_id']];

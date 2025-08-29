@@ -2,9 +2,9 @@
 
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueRosters;
-use Sleeper\Laravel\Requests\Leagues\GetLeagueUsers;
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueRosters;
+use MichaelCrowcroft\SleeperLaravel\Requests\Leagues\GetLeagueUsers;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 it('computes league standings and sorts correctly', function () {
     $rosters = [
@@ -63,4 +63,3 @@ it('computes league standings and sorts correctly', function () {
     expect($standings[0]['team_name'])->toBe('Bob');
     expect($standings[1]['team_name'])->toBe('A-Team');
 });
-

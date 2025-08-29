@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel\Models;
+namespace MichaelCrowcroft\SleeperLaravel\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Sushi\Sushi;
@@ -74,4 +74,3 @@ class Player extends Model
         return $rows;
     }
 }
-

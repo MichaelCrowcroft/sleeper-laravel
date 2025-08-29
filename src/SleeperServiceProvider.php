@@ -1,6 +1,6 @@
 <?php
 
-namespace Sleeper\Laravel;
+namespace MichaelCrowcroft\SleeperLaravel;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -27,7 +27,7 @@ class SleeperServiceProvider extends ServiceProvider implements DeferrableProvid
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Sleeper\Laravel\Commands\RefreshPlayersCsv::class,
+                \MichaelCrowcroft\SleeperLaravel\Commands\RefreshPlayersCsv::class,
             ]);
         }
     }

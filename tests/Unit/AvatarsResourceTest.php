@@ -1,6 +1,6 @@
 <?php
 
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 it('builds avatar URLs', function () {
     $avatars = app(Sleeper::class)->avatars();
@@ -14,4 +14,3 @@ it('builds avatar URLs', function () {
     expect($avatars->thumbUrl('abc123'))
         ->toBe('https://cdn.test/avatars/thumbs/abc123');
 });
-

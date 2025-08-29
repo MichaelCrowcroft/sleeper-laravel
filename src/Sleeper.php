@@ -1,17 +1,17 @@
 <?php
 
-namespace Sleeper\Laravel;
+namespace MichaelCrowcroft\SleeperLaravel;
 
 use Saloon\Http\Connector;
-use Sleeper\Laravel\Fluent\DraftContext;
-use Sleeper\Laravel\Fluent\LeagueContext;
-use Sleeper\Laravel\Fluent\UserContext;
-use Sleeper\Laravel\Resources\AvatarsResource;
-use Sleeper\Laravel\Resources\DraftsResource;
-use Sleeper\Laravel\Resources\LeaguesResource;
-use Sleeper\Laravel\Resources\PlayersResource;
-use Sleeper\Laravel\Resources\StateResource;
-use Sleeper\Laravel\Resources\UsersResource;
+use MichaelCrowcroft\SleeperLaravel\Fluent\DraftContext;
+use MichaelCrowcroft\SleeperLaravel\Fluent\LeagueContext;
+use MichaelCrowcroft\SleeperLaravel\Fluent\UserContext;
+use MichaelCrowcroft\SleeperLaravel\Resources\AvatarsResource;
+use MichaelCrowcroft\SleeperLaravel\Resources\DraftsResource;
+use MichaelCrowcroft\SleeperLaravel\Resources\LeaguesResource;
+use MichaelCrowcroft\SleeperLaravel\Resources\PlayersResource;
+use MichaelCrowcroft\SleeperLaravel\Resources\StateResource;
+use MichaelCrowcroft\SleeperLaravel\Resources\UsersResource;
 
 class Sleeper extends Connector
 {

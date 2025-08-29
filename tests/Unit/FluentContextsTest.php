@@ -1,6 +1,6 @@
 <?php
 
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 it('creates user, league, and draft contexts', function () {
     $sleeper = app(Sleeper::class);
@@ -14,4 +14,3 @@ it('creates user, league, and draft contexts', function () {
     $draft = $sleeper->draft('draft-1');
     expect($draft->draftId())->toBe('draft-1');
 });
-

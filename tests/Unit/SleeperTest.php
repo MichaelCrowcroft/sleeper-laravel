@@ -2,8 +2,8 @@
 
 use Saloon\Http\Faking\MockClient;
 use Saloon\Http\Faking\MockResponse;
-use Sleeper\Laravel\Requests\State\GetState;
-use Sleeper\Laravel\Sleeper;
+use MichaelCrowcroft\SleeperLaravel\Requests\State\GetState;
+use MichaelCrowcroft\SleeperLaravel\Sleeper;
 
 it('uses base URL from config', function () {
     $sleeper = app(Sleeper::class);
@@ -31,4 +31,3 @@ it('sets default headers and config on requests', function () {
         ->toHaveKey('timeout', 5)
         ->toHaveKey('connect_timeout', 2);
 });
-
