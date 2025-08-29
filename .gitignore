@@ -1,0 +1,44 @@
+# Dependencies
+/vendor/
+/composer.phar
+
+# For libraries, lock file is not required
+/composer.lock
+
+# Node / frontend (if present)
+/node_modules/
+/package-lock.json
+/yarn.lock
+/pnpm-lock.yaml
+/npm-debug.log*
+/yarn-error.log*
+
+# Laravel Testbench workbench app
+/workbench/
+
+# IDE / OS
+/.idea/
+/.vscode/
+/.fleet/
+/.history/
+/.DS_Store
+/Thumbs.db
+
+# Testing / coverage
+/.phpunit.result.cache
+/.phpunit.cache/
+/coverage/
+
+# Code style / analysis caches
+/.php-cs-fixer.cache
+/phpstan.cache
+/.phpactor/
+
+# Build artifacts
+/build/
+/dist/
+
+# Environment
+/.env
+/.env.*
+
