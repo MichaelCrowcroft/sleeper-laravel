@@ -23,6 +23,14 @@ class PlayersResource extends BaseResource
 
     /**
      * Convenience helper: return enriched trending list with `player` details attached.
+     *
+     * Example output item:
+     * [
+     *   'player_id' => '4034',
+     *   'count' => 123,
+     *   'delta_weighted' => 456,
+     *   'player' => [ ... attributes from Sushi Player model ... ]
+     * ]
      */
     public function trendingArrayWithPlayers(?string $sport = null, ?int $lookbackHours = null, ?int $limit = null): array
     {
@@ -40,5 +48,13 @@ class PlayersResource extends BaseResource
         }
         unset($i);
         return $items;
+    }
+
+    /**
+     * Alias of trendingArrayWithPlayers for a cleaner name.
+     */
+    public function trendingWithPlayers(?string $sport = null, ?int $lookbackHours = null, ?int $limit = null): array
+    {
+        return $this->trendingArrayWithPlayers($sport, $lookbackHours, $limit);
     }
 }

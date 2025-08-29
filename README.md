@@ -44,7 +44,8 @@ $picks  = Sleeper::drafts()->picks($drafts[0]['draft_id'])->json();
 
 // Players
 $playersMap = Sleeper::players()->all()->json();
-$trendingAdds = Sleeper::players()->trending(lookbackHours: 24, limit: 25)->json();
+// Enriched trending (includes `player` info from local Sushi model)
+$trendingAdds = Sleeper::players()->trendingWithPlayers(lookbackHours: 24, limit: 25);
 
 // Avatars
 $avatarUrl = Sleeper::avatars()->fullUrl($user['avatar'] ?? null);
@@ -134,7 +135,7 @@ $wrs = Player::where('position', 'WR')->limit(10)->get();
 
 Enriched helpers that blend player data wherever `player_id` appears:
 
-- `Sleeper::players()->trendingArrayWithPlayers()` → attaches `player` to each trending item.
+- `Sleeper::players()->trendingArrayWithPlayers()` / `trendingWithPlayers()` → attaches `player` to each trending item.
 - `Sleeper::leagues()->matchupsWithUsers(leagueId, week)` → each team now includes `players_info` and `starters_info` arrays.
 - `Sleeper::drafts()->board(draftId)` → each pick includes a `player` key when resolvable.
 - `Sleeper::leagues()->transactionsWithPlayers(leagueId, round)` → adds `adds_players` and `drops_players` arrays.
