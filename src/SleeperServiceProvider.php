@@ -24,12 +24,6 @@ class SleeperServiceProvider extends ServiceProvider implements DeferrableProvid
         $this->publishes([
             __DIR__.'/../config/sleeper.php' => config_path('sleeper.php'),
         ], 'sleeper-config');
-
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                \MichaelCrowcroft\SleeperLaravel\Commands\RefreshPlayersCsv::class,
-            ]);
-        }
     }
 
     public function provides(): array

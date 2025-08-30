@@ -20,42 +20,4 @@ class PlayersResource extends BaseResource
         $sport = $sport ?? (string) config('sleeper.default_sport', 'nfl');
         return $this->connector->send(new GetTrendingPlayers($sport, 'add', $lookbackHours, $limit));
     }
-
-    /**
-     * Convenience helper: return trending list with player details merged into each item.
-     *
-     * Example output item:
-     * [
-     *   'player_id' => '4034',
-     *   'count' => 123,
-     *   ... attributes from Sushi Player model
-     * ]
-     */
-    public function trendingArrayWithPlayers(?string $sport = null, ?int $lookbackHours = null, ?int $limit = null): array
-    {
-        $items = $this->trending($sport, $lookbackHours, $limit)->json();
-        $ids = [];
-        foreach ($items as $i) {
-            $pid = $i['player_id'] ?? null;
-            if ($pid) $ids[] = (string) $pid;
-        }
-        $players = \MichaelCrowcroft\SleeperLaravel\Support\PlayerLookup::mapByIds($ids);
-        foreach ($items as &$i) {
-            $pid = $i['player_id'] ?? null;
-            if ($pid && isset($players[$pid])) {
-                // Merge player attributes into the item. Preserve existing item keys on collision.
-                $i = $i + $players[$pid];
-            }
-        }
-        unset($i);
-        return $items;
-    }
-
-    /**
-     * Alias of trendingArrayWithPlayers for a cleaner name.
-     */
-    public function trendingWithPlayers(?string $sport = null, ?int $lookbackHours = null, ?int $limit = null): array
-    {
-        return $this->trendingArrayWithPlayers($sport, $lookbackHours, $limit);
-    }
 }
